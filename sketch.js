@@ -13,7 +13,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     personagem = new Personagem(imagemPersonagem);
     cenario = new Cenario(imagemCenario, 3);
-    //somDoJogo.loop();
+    somDoJogo.loop();
 }
 
 function draw() {
