@@ -1,29 +1,32 @@
 class Personagem extends Animacao {
-    constructor(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite) {
-        super(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite);
+    constructor(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite) {
+        super(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite);
 
-        this.yInicial = height - this.altura;
+        this.yInicial = height - this.altura - variacaoY;
         this.y = this.yInicial;
 
         this.velocidadePulo = 0;
         this.gravidade = 3;
+        this.alturaDoPulo = -30;
+        this.pulos = 0;
     }
 
-    pula() {
-        //if (this.velocidadePulo === 0) {
-        this.velocidadePulo = -33;
-        //}
+    pula(somDoPulo) {
+        if (this.pulos < 3) {
+            this.velocidadePulo = this.alturaDoPulo;
+            this.pulos++;
+            somDoPulo.play();
+        }
     }
 
     aplicaGravidade() {
-        //if (this.velocidadePulo !== 0) {
         this.y = this.y + this.velocidadePulo;
         this.velocidadePulo = this.velocidadePulo + this.gravidade;
-        //}
 
         if (this.y > this.yInicial) {
             this.y = this.yInicial;
             this.velocidadePulo = 0;
+            this.pulos = 0;
         }
     }
 
@@ -32,7 +35,9 @@ class Personagem extends Animacao {
         const precisao = .7;
 
         noFill();
+        stroke("#0f0");
         rect(this.x, this.y, this.largura * precisao, this.altura * precisao);
+        stroke("#f00");
         rect(inimigo.x, inimigo.y, inimigo.largura * precisao, inimigo.altura * precisao);
 
         return collideRectRect(
