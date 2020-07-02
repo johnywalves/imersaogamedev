@@ -4,6 +4,7 @@ class Pontuacao {
     }
 
     exibe() {
+        noStroke()
         fill("#fff")
         textAlign(RIGHT)
         textSize(50);
