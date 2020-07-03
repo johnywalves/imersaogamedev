@@ -6,6 +6,9 @@ function preload() {
     imagemInimigoGrande = loadImage('assets/imagens/inimigos/troll.png');
     imagemInimigoVoador = loadImage('assets/imagens/inimigos/gotinha-voadora.png');
     imagemTelaInicial = loadImage('assets/imagens/assets/telaInicial.png');
+    imagemCoracao = loadImage('assets/imagens/assets/coracao.png');
+
+    fita = loadJSON('fita/fita.json');
 
     fonteTelaInicial = loadFont('assets/imagens/assets/fonteTelaInicial.otf');
 

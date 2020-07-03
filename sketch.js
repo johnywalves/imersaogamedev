@@ -21,7 +21,7 @@ function keyPressed() {
 
 function mousePressed() {
     if (!isPlaying) {
-        //somDoJogo.loop();
+        //somDoJogo.loop(); 
         isPlaying = true;
     }
 }

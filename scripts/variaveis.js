@@ -5,6 +5,7 @@ let imagemInimigo;
 let imagemInimigoGrande;
 let imagemInimigoVoador;
 let imagemTelaInicial;
+let imagemCoracao;
 let botaoGerenciador;
 
 let fonteTelaInicial;
@@ -15,6 +16,8 @@ let somDoJogo;
 let somDoPulo;
 let isPlaying;
 let pontuacao;
+let vida;
+let fita;
 
 let jogo;
 let cenaAtual = 'telaInicial';
